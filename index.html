@@ -1,270 +1,117 @@
 
-
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kalb Hotel — Boutique, Cage-Free • 24/7 Care</title>
-  <meta name="description" content="Kalb Hotel is a luxury, cage-free dog hotel. Private suites, daily enrichment, and round-the-clock professional supervision—so your best friend enjoys a five-star experience." />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kalb Hotel — בוטיק • ללא כלובים • 24/7</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7ece6; --ink:#2a2a2a; --muted:#6b6764;
+  --brand:#cfa676; --pill:#f4e9e2; --card:#ffffffee;
+  --shadow:0 10px 30px rgba(0,0,0,.08); --r:22px;
+}
+*{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial}
+.wrap{max-width:1200px;margin:0 auto;padding:28px 22px 64px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-name{font-family:"Playfair Display",serif;font-weight:700;font-size:64px;line-height:1}
+.sub{color:#5f574f;margin-top:4px;font-weight:600}
+.lang{display:flex;gap:8px;background:#f1dfd6;padding:4px;border-radius:999px;box-shadow:var(--shadow)}
+.lang button{border:0;background:transparent;padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer;color:#5a524c}
+.lang .active{background:var(--brand);color:#fff}
 
-  <style>
-    :root{
-      /* גוונים בהשראת הדף שאהבת */
-      --bg:#f7ece6; /* שמנתי-וורדרד רך */
-      --bg-2:#ffffff;
-      --ink:#2a2a2a;
-      --muted:#6b6764;
-      --brand:#cfa676; /* זהב פסטלי */
-      --pill:#f4e9e2;
-      --accent:#f1dfd6;
-      --card:#ffffffc7;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:22px;
-    }
+/* פריסה */
+.hero{margin-top:22px;display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
+.card{background:var(--card);border:1px solid #eee;border-radius:var(--r);box-shadow:var(--shadow)}
+.panel{padding:26px}
+.title{font-family:"Playfair Display",serif;font-size:56px;line-height:1.1;margin:8px 0 10px}
+.lead{font-size:18px;color:var(--muted)}
+.about-badge{margin:16px 0 8px;display:inline-block;background:var(--pill);border:1px solid #ead9cf;padding:10px 14px;border-radius:14px;font-weight:700}
+.about{margin:0 0 14px;font-size:17px;color:#4e4843}
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      background:
-        radial-gradient(1200px 600px at 85% 10%, #fff 0%, var(--bg) 55%, #f7efe9 100%);
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink)
-    }
-    a{color:inherit;text-decoration:none}
+/* “כרטיסיות” שירות */
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.pill{background:linear-gradient(180deg,#fff,#fbf6f3);border:1px solid #eee;border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.pill b{display:block;font-size:15px;margin-bottom:6px}
+.pill p{margin:0;color:#5b5753;font-size:15px}
 
-    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+/* גלריה – שתי תמונות גדולות, אחת מעל השנייה */
+.gallery{display:grid;gap:18px;align-self:start}
+.dog{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #eee;background:#f7f2ee;aspect-ratio:4/3}
+.dog img{width:100%;height:100%;object-fit:cover;display:block}
+/* תיקון חיתוך מדויק */
+.dog.top img{object-position:center 64%}   /* יותר תחתית לתמונה העליונה */
+.dog.bottom img{object-position:center 36%}/* יותר עליון לתחתונה (ראש) */
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cta{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.btn{padding:13px 18px;border-radius:12px;border:1px solid var(--brand);font-weight:700;cursor:pointer;text-decoration:none}
+.primary{background:var(--brand);color:#fff;border-color:transparent}
+.ghost{background:#fff;color:#4b423a}
+footer{margin-top:34px;text-align:center;color:#7a7068;font-size:13px}
 
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand-logo{
-      width:48px;height:48px;border-radius:50%;
-      background:linear-gradient(145deg,#fff,#f6eee8);
-      border:2px solid var(--brand);
-      display:grid;place-items:center;box-shadow:var(--shadow);overflow:hidden;
-    }
-    .brand-logo img{width:100%;height:100%;object-fit:cover}
-    .brand-name{
-      font-family:"Playfair Display", serif;
-      font-weight:700;letter-spacing:.3px;
-      font-size:52px;line-height:1; /* ↑ גדול ומדגיש את הדומיין/מותג */
-    }
-    .badge{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:6px 12px;border-radius:999px;
-      background:var(--pill);color:#5a524c;font-weight:600;font-size:12px
-    }
-
-    .lang{display:flex;gap:8px;background:var(--accent);padding:4px;border-radius:999px;box-shadow:var(--shadow)}
-    .lang button{
-      border:0;background:transparent;padding:8px 12px;border-radius:999px;
-      font-weight:600;cursor:pointer;color:#5a524c
-    }
-    .lang button.active{background:var(--brand);color:#fff}
-
-    .hero{
-      margin-top:20px;display:grid;grid-template-columns:1.35fr .65fr;gap:24px;
-      /* ↑ יותר מקום לטקסט, פחות לתמונות */
-    }
-
-    .card{
-      background:var(--card);border:1px solid #eee;border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .panel{padding:26px 26px 22px}
-    .title{
-      font-family:"Playfair Display", serif;font-weight:700;
-      font-size:46px;line-height:1.1;margin:8px 0 12px;
-    }
-    .lead{color:var(--muted);font-size:16.5px}
-
-    .cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 18px;border-radius:12px;border:1px solid var(--brand);
-      font-weight:700;cursor:pointer;transition:.2s ease;text-align:center
-    }
-    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
-    .btn.primary:hover{filter:saturate(1.05) brightness(1.02)}
-    .btn.ghost{background:#fff;color:#4b423a}
-
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .section{margin-top:18px;padding:18px 24px}
-    .section h3{margin:0 0 8px;font-size:18px;letter-spacing:.2px}
-    .section p{margin:0;color:#5b5753}
-
-    .pillbar{display:grid;gap:12px;padding:18px}
-    .pill{
-      background:linear-gradient(180deg,#fff,#fcf7f4);
-      border:1px solid #eee;border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)
-    }
-    .pill b{display:block;font-size:13px;opacity:.85;margin-bottom:6px}
-    .pill p{margin:0;color:#5f5a55;font-size:14px}
-
-    /* גלריה – שתי תמונות בלבד, קטנות יותר, עם קיזוזים לגובה */
-    .gallery{display:grid;gap:16px;align-self:start;max-width:420px}
-    .dog{border-radius:18px;overflow:hidden;aspect-ratio:4/3;
-      box-shadow:var(--shadow);border:1px solid #eee;background:#f7f2ee}
-    .dog img{width:100%;height:100%;object-fit:cover;display:block}
-
-    /* מיקומים כדי שלא ייחתך הראש/כורסה */
-    .dog.top img{object-position:center 14%} /* הכלב עם הסרט – יותר שמיים מעל הראש */
-    .dog.bottom img{object-position:center 62%}/* הפומרניאן – יותר כורסה בתחתית */
-
-    footer{margin-top:30px;padding:18px;text-align:center;color:#7a7068;font-size:13px}
-
-    /* RTL */
-    [dir="rtl"] .hero{grid-template-columns:.65fr 1.35fr}
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr}
-      .title{font-size:40px}
-      .brand-name{font-size:42px}
-      .gallery{max-width:100%}
-    }
-  </style>
+@media (max-width:1000px){
+  .brand-name{font-size:48px}
+  .hero{grid-template-columns:1fr;gap:22px}
+  .pills{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <header>
-      <div class="brand">
-        <div class="brand-logo">
-          <img src="assets/dogs/pompom.jpg" alt="Kalb Hotel" onerror="this.style.display='none'">
-        </div>
-        <div>
-          <div class="brand-name">Kalb Hotel</div>
-          <div class="badge" data-i="badge">Boutique • Cage-Free • 24/7 Care</div>
-        </div>
+  <header>
+    <div>
+      <div class="brand-name">Kalb Hotel</div>
+      <div class="sub">בוטיק • ללא כלובים • השגחה 24/7</div>
+    </div>
+    <div class="lang">
+      <button class="active">HE</button><button>AR</button><button>EN</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <!-- טור תוכן -->
+    <section class="card panel">
+      <h1 class="title">מקום שהכלב מרגיש בו מלך.</h1>
+
+      <!-- על השם – מודגש ובולט מתחת לכותרת -->
+      <span class="about-badge">על השם</span>
+      <p class="about">
+        <b>“Kalb”</b> פירושו כלב בערבית, ובאנגלית <b>“Kalb Hotel”</b> מזכיר את <em>“Club Hotel”</em>.
+        זהו משחק מילים שמדגיש ייחודיות וזכירות — אידאלי לדומיין פרימיום.
+      </p>
+
+      <p class="lead">
+        Kalb Hotel הוא פנסיון יוקרה לכלבים ללא כלובים. סוויטות פרטיות, פינוק יומי והשגחה מסביב לשעון — לחוויית חמשת כוכבים.
+      </p>
+
+      <div class="cta">
+        <a href="https://wa.me/0000000000" class="btn primary">שיחה / וואטסאפ</a>
+        <a href="mailto:info@kalbhotel.com" class="btn ghost">צור קשר</a>
       </div>
 
-      <div class="lang" aria-label="Language">
-        <button data-lang="en" class="active">EN</button>
-        <button data-lang="ar">AR</button>
-        <button data-lang="he">HE</button>
+      <div class="pills">
+        <div class="pill"><b>סוויטות יוקרה</b><p>חדרים אלגנטיים עם בקרת אקלים וריהוט מפנק.</p></div>
+        <div class="pill"><b>פעילות יומית</b><p>טיפולי ספא, משחקים והעשרה.</p></div>
+        <div class="pill"><b>השגחה 24/7</b><p>צוות קשוב לבטיחות ולנוחות.</p></div>
+        <div class="pill"><b>Premium Domain</b><p><b>kalbhotel.com</b> — זמין לרכישה.</p></div>
       </div>
-    </header>
+    </section>
 
-    <main class="hero">
-      <!-- left: content -->
-      <section class="card panel">
-        <h1 class="title" data-i="headline">Where dogs stay like royals.</h1>
-        <p class="lead" data-i="lede">
-          Kalb Hotel is a luxury, cage-free dog hotel. Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience.
-        </p>
+    <!-- טור תמונות (אחת מעל השנייה) -->
+    <aside class="gallery">
+      <figure class="dog top">
+        <img src="assets/dogs/maltese_suite.jpg" alt="כלב לבן קטן עם סרט ורוד על הדום מרופד">
+      </figure>
+      <figure class="dog bottom">
+        <img src="assets/dogs/pomeranian_glam.jpg" alt="פומרניאן פרוותי על כורסה מוזהבת בחדר פסטלי">
+      </figure>
+    </aside>
+  </main>
 
-        <div class="cta-row">
-          <a class="btn primary" href="mailto:info@kalbhotel.com" data-i="cta1">Contact Us</a>
-          <a class="btn ghost" href="https://wa.me/0000000000" target="_blank" rel="noopener" data-i="cta2">Call / WhatsApp</a>
-        </div>
-
-        <div class="grid-2 section card" style="background:linear-gradient(180deg,#fff,#fcf7f4);">
-          <div class="pill">
-            <b data-i="h_lux">Luxury Suites</b>
-            <p data-i="p_lux">Elegant, climate-controlled rooms with plush furnishings.</p>
-          </div>
-          <div class="pill">
-            <b data-i="h_daily">Daily Activities</b>
-            <p data-i="p_daily">Spa treatments, play sessions, and enrichment.</p>
-          </div>
-          <div class="pill">
-            <b data-i="h_super">24/7 Supervision</b>
-            <p data-i="p_super">Attentive staff ensuring safety and comfort.</p>
-          </div>
-          <div class="pill">
-            <b>Premium Domain</b>
-            <p><strong>kalbhotel.com</strong> — available for acquisition.</p>
-          </div>
-        </div>
-
-        <!-- הדגשת משחק המילים Kalb/Club -->
-        <section class="section card" style="border:1px dashed var(--brand)">
-          <h3 data-i="about_name_h">About the name</h3>
-          <p data-i="about_name_p">
-            <strong>“Kalb”</strong> is Arabic for “dog”, while in English <strong>“Kalb Hotel”</strong> echoes
-            <em>“Club Hotel”</em> — a playful wordplay that hints at a boutique vibe for canine royalty.
-          </p>
-        </section>
-      </section>
-
-      <!-- right: gallery (2 images only) -->
-      <aside class="gallery">
-        <div class="dog top"><img src="assets/dogs/maltese_suite.jpg" alt="Small white dog with a satin bow on a plush ottoman"></div>
-        <div class="dog bottom"><img src="assets/dogs/pomeranian_glam.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room"></div>
-      </aside>
-    </main>
-
-    <footer>© Kalb Hotel. All rights reserved.</footer>
-  </div>
-
-  <script>
-    // i18n (EN/AR/HE) + RTL — נשמר כמו אצלך
-    const i18n = {
-      en: {
-        badge:"Boutique • Cage-Free • 24/7 Care",
-        headline:"Where dogs stay like royals.",
-        lede:"Kalb Hotel is a luxury, cage-free dog hotel. Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience.",
-        cta1:"Contact Us",
-        cta2:"Call / WhatsApp",
-        h_lux:"Luxury Suites", p_lux:"Elegant, climate-controlled rooms with plush furnishings.",
-        h_daily:"Daily Activities", p_daily:"Spa treatments, play sessions, and enrichment.",
-        h_super:"24/7 Supervision", p_super:"Attentive staff ensuring safety and comfort.",
-        about_name_h:"About the name",
-        about_name_p:"“Kalb” is Arabic for “dog”, while in English “Kalb Hotel” echoes “Club Hotel” — a playful wordplay that hints at a boutique vibe for canine royalty."
-      },
-      ar: {
-        badge:"فندق راقٍ • بدون أقفاص • رعاية 24/7",
-        headline:"حيث تقيم الكلاب مثل الملوك.",
-        lede:"Kalb Hotel فندق فاخر للكلاب بدون أقفاص. أجنحة خاصة، تدليل يومي وإشراف على مدار الساعة — كي يحظى صديقك بتجربة خمس نجوم.",
-        cta1:"تواصل معنا", cta2:"اتصال / واتساب",
-        h_lux:"أجنحة فاخرة", p_lux:"غرف أنيقة مع تحكم بالمناخ وفرش فاخر.",
-        h_daily:"أنشطة يومية", p_daily:"علاجات سبا، لعب، وإثراء.",
-        h_super:"إشراف 24/7", p_super:"طاقم يقظ يضمن الأمان والراحة.",
-        about_name_h:"عن الاسم",
-        about_name_p:"«كلب» تعني كلب بالعربية، وفي الإنجليزية «Kalb Hotel» تذكّر بـ «Club Hotel» — تلاعب لطيف يعطي إحساس בוטיק."
-      },
-      he: {
-        badge:"בוטיק • ללא כלובים • השגחה 24/7",
-        headline:"מקום שהכלב מרגיש בו מלך.",
-        lede:"Kalb Hotel הוא פנסיון יוקרה לכלבים ללא כלובים. סוויטות פרטיות, פינוק יומי והשגחה מסביב לשעון — לחוויית חמשת כוכבים.",
-        cta1:"צור קשר", cta2:"שיחה / וואטסאפ",
-        h_lux:"סוויטות יוקרה", p_lux:"חדרים אלגנטיים עם בקרת אקלים וריהוט מפנק.",
-        h_daily:"פעילות יומית", p_daily:"טיפולי ספא, משחקים והעשרה.",
-        h_super:"השגחה 24/7", p_super:"צוות קשוב לבטיחות ולנוחות.",
-        about_name_h:"על השם",
-        about_name_p:"“Kalb” פירושו כלב בערבית, ובאנגלית “Kalb Hotel” מזכיר “Club Hotel” — משחק מילים שמרמז על אווירת בוטיק לכלבי מלוכה."
-      }
-    };
-
-    function applyLang(lang){
-      const pack = i18n[lang] || i18n.en;
-      document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === 'ar' || lang === 'he') ? 'rtl' : 'ltr';
-      document.querySelectorAll('[data-i]').forEach(el=>{
-        const key = el.getAttribute('data-i');
-        if(pack[key]) el.textContent = pack[key];
-      });
-      document.querySelectorAll('.lang button').forEach(b=>{
-        b.classList.toggle('active', b.dataset.lang===lang);
-      });
-    }
-
-    // Auto-detect
-    (function(){
-      const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      let lang = 'en';
-      if(nav.startsWith('he')) lang = 'he';
-      if(nav.startsWith('ar')) lang = 'ar';
-      applyLang(lang);
-    })();
-
-    // Manual toggle
-    document.querySelectorAll('.lang button').forEach(btn=>{
-      btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
-    });
-  </script>
+  <footer>© Kalb Hotel</footer>
+</div>
 </body>
 </html>
