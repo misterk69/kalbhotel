@@ -1,0 +1,260 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalb Hotel — Boutique • Cage-Free • 24/7 Care</title>
+  <meta name="description" content="Kalb Hotel — boutique, cage-free dog suites with round-the-clock supervision." />
+
+  <!-- Badge favicon (K in a circle) -->
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <style>
+    :root{
+      --bg:#f6efe7; /* רקע בז' ורדרד */
+      --panel:#f2e6dc; /* פנלים */
+      --brand:#b78e5a; /* זהב רך */
+      --ink:#2a2420; /* טקסט כהה */
+      --muted:#9a8778; /* טקסט משני */
+      --btn:#d9b894; /* כפתור */
+      --btn-ink:#fff;
+      --ring:rgba(183,142,90,.25);
+      --radius:18px;
+      --gap:22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:17px/1.6 "Georgia", "Times New Roman", serif;
+      color:var(--ink);
+      background:linear-gradient(180deg, #fff 0%, var(--bg) 15%, var(--bg) 100%);
+    }
+    .shell{
+      max-width:1100px;
+      margin:0 auto;
+      padding:28px 20px 64px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:48px;
+    }
+
+    /* Header */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:24px;
+    }
+    .mark{
+      width:44px;height:44px; border-radius:999px;
+      border:2px solid var(--brand); color:var(--brand);
+      display:grid; place-items:center; font-weight:700; font-family:Cambria, Georgia, serif;
+    }
+    .brand h1{margin:0; font-size:44px; line-height:1.05; font-weight:600; letter-spacing:.3px}
+    .tag{margin-top:6px; color:var(--muted); letter-spacing:.18em; font-size:13px}
+
+    /* Language switch */
+    .lang{
+      position:absolute; right:22px; top:18px; display:flex; gap:8px;
+    }
+    .lang button{
+      border:1px solid var(--brand); color:var(--brand);
+      background:#fff; padding:4px 10px; border-radius:999px; cursor:pointer;
+      font:600 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .lang button[aria-current="true"]{background:var(--brand); color:#fff}
+
+    /* Left column content */
+    .lede h2{margin:0 0 10px; font-size:36px; line-height:1.15; letter-spacing:.2px}
+    .lede p{margin:0 0 22px; color:#5a4e45}
+    .cta{display:flex; gap:14px; margin:18px 0 26px}
+    .btn{
+      padding:12px 18px; border-radius:999px; border:2px solid transparent;
+      background:var(--btn); color:var(--btn-ink); font-weight:700; cursor:pointer;
+      box-shadow:0 0 0 0 rgba(0,0,0,0); transition:box-shadow .2s ease, transform .05s ease;
+    }
+    .btn.secondary{
+      background:#fff; color:var(--ink); border-color:var(--brand);
+    }
+    .btn:focus-visible{outline:none; box-shadow:0 0 0 6px var(--ring)}
+    .btn:active{transform:translateY(1px)}
+
+    /* Feature cards */
+    .cards{display:grid; gap:12px; margin-top:12px}
+    .card{
+      background:var(--panel); padding:14px 16px; border-radius:var(--radius);
+      border:1px solid rgba(0,0,0,.04);
+    }
+    .card h3{margin:0 0 6px; font-size:18px}
+    .card p{margin:0; color:#6f6155}
+
+    /* Right column gallery (2 תמונות זו מתחת לזו, בלי חפיפה) */
+    .gallery{display:flex; flex-direction:column; gap:16px}
+    figure{margin:0; border-radius:16px; overflow:hidden; background:#ddd}
+    figure img{display:block; width:100%; height:auto}
+    figcaption{display:none} /* לא מציגים את הכיתוב הירוק הדבילי */
+
+    /* Footer mini */
+    .sale{
+      margin-top:22px; font-size:14px; color:#6f6155
+    }
+    .sale b{color:var(--ink)}
+    .wrap{position:relative}
+    @media (max-width: 920px){
+      .shell{grid-template-columns:1fr; gap:28px}
+      .lang{top:12px; right:14px}
+      .brand h1{font-size:34px}
+      .lede h2{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="lang" aria-label="Language">
+      <button data-lang="en" aria-current="true">EN</button>
+      <button data-lang="he">HE</button>
+      <button data-lang="ar">AR</button>
+    </div>
+
+    <main class="shell" id="app">
+      <!-- LEFT -->
+      <section class="left">
+        <header class="brand">
+          <div class="mark">K</div>
+          <div>
+            <h1>Kalb Hotel</h1>
+            <div class="tag" data-i18n="tag">BOUTIQUE • CAGE-FREE • 24/7 CARE</div>
+          </div>
+        </header>
+
+        <div class="lede">
+          <h2 data-i18n="headline">Where dogs stay like royals.</h2>
+          <p data-i18n="sub">
+            Private suites, daily pampering, and round-the-clock supervision—so your best friend enjoys a five-star experience.
+          </p>
+          <div class="cta">
+            <a class="btn secondary" href="#contact" data-i18n="contact">Contact Us</a>
+            <a class="btn" href="https://wa.me/" target="_blank" rel="noopener" data-i18n="whatsapp">Call / WhatsApp</a>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h3 data-i18n="lux_title">Luxury Suites</h3>
+              <p data-i18n="lux_copy">Elegant, climate-controlled rooms with plush furnishings.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="day_title">Daily Activities</h3>
+              <p data-i18n="day_copy">Spa treatments, play sessions, and enrichment.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="sup_title">24/7 Supervision</h3>
+              <p data-i18n="sup_copy">Attentive staff ensuring safety and comfort.</p>
+            </article>
+          </div>
+
+          <p class="sale"><b data-i18n="domain_title">Premium Domain Available</b> · kalbhotel.com</p>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="gallery">
+        <figure class="photo">
+          <img src="assets/dogs/maltese_suite.jpg" alt="Small white dog with a satin bow on a plush ottoman">
+          <figcaption>Small white dog…</figcaption>
+        </figure>
+        <figure class="photo">
+          <img src="assets/dogs/pomeranian_glam.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room">
+          <figcaption>Fluffy pomeranian…</figcaption>
+        </figure>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // טקסטים בשלוש שפות
+    const dict = {
+      en: {
+        tag: "BOUTIQUE • CAGE-FREE • 24/7 CARE",
+        headline: "Where dogs stay like royals.",
+        sub: "Private suites, daily pampering, and round-the-clock supervision—so your best friend enjoys a five-star experience.",
+        contact: "Contact Us",
+        whatsapp: "Call / WhatsApp",
+        lux_title: "Luxury Suites",
+        lux_copy: "Elegant, climate-controlled rooms with plush furnishings.",
+        day_title: "Daily Activities",
+        day_copy: "Spa treatments, play sessions, and enrichment.",
+        sup_title: "24/7 Supervision",
+        sup_copy: "Attentive staff ensuring safety and comfort.",
+        domain_title: "Premium Domain Available",
+        dir: "ltr"
+      },
+      he: {
+        tag: "בוטיק • ללא כלובים • השגחה 24/7",
+        headline: "מקום שהכלב מרגיש בו מלך.",
+        sub: "סוויטות פרטיות, פינוקים יומיומיים והשגחה מסביב לשעון — כדי שחברך הטוב ייהנה מחוויית חמישה כוכבים.",
+        contact: "צור קשר",
+        whatsapp: "שיחה / וואטסאפ",
+        lux_title: "סוויטות יוקרה",
+        lux_copy: "חדרים אלגנטיים, ממוזגים ומאובזרים בריהוט מפנק.",
+        day_title: "פעילויות יומיות",
+        day_copy: "טיפולי ספא, סשני משחק והעשרה.",
+        sup_title: "השגחה 24/7",
+        sup_copy: "צוות קשוב המבטיח בטיחות ונוחות.",
+        domain_title: "דומיין פרימיום למכירה",
+        dir: "rtl"
+      },
+      ar: {
+        tag: "بوتيك • بدون أقفاص • إشراف 24/7",
+        headline: "مكان يقيم فيه الكلاب كأنهم ملوك.",
+        sub: "أجنحة خاصة، تدليل يومي وإشراف على مدار الساعة — ليستمتع صديقك بأعلى مستوى من الراحة.",
+        contact: "تواصل معنا",
+        whatsapp: "اتصال / واتساب",
+        lux_title: "أجنحة فاخرة",
+        lux_copy: "غرف أنيقة مع تحكم بالمناخ وأثاث مريح.",
+        day_title: "أنشطة يومية",
+        day_copy: "جلسات لعب وعلاجات سبا وإثراء.",
+        sup_title: "إشراف 24/7",
+        sup_copy: "طاقم يقظ يضمن السلامة والراحة.",
+        domain_title: "نطاق مميز متاح",
+        dir: "rtl"
+      }
+    };
+
+    // החלפת שפה ידנית
+    const $ = (s, all=false)=> all?document.querySelectorAll(s):document.querySelector(s);
+    const setLang = code=>{
+      const t = dict[code] || dict.en;
+      document.documentElement.lang = code;
+      document.documentElement.dir = t.dir;
+      $("[data-i18n]", true).forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if(t[key]) el.textContent = t[key];
+      });
+      $(".lang button[aria-current='true']")?.setAttribute("aria-current","false");
+      $(`.lang button[data-lang='${code}']`)?.setAttribute("aria-current","true");
+      localStorage.setItem("kalb_lang", code);
+    };
+
+    // זיהוי שפה אוטומטי (עם זכירת בחירה)
+    (function(){
+      const saved = localStorage.getItem("kalb_lang");
+      if(saved) return setLang(saved);
+      const n = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+      const lc = n.toLowerCase();
+      if(lc.startsWith("he")) setLang("he");
+      else if(lc.startsWith("ar")) setLang("ar");
+      else setLang("en");
+    })();
+
+    $(".lang", true).forEach(()=>{});
+    $(".lang").addEventListener("click", (e)=>{
+      const b = e.target.closest("button[data-lang]");
+      if(!b) return;
+      setLang(b.getAttribute("data-lang"));
+    });
+  </script>
+
+  <!-- force rebuild -->
+</body>
+</html>
