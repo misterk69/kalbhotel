@@ -2,181 +2,181 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kalb Hotel — Where Dogs Stay Like Royals</title>
-  <meta name="description" content="Private suites, daily pampering, and round-the-clock supervision—so your best friend enjoys a five-star experience.">
-  <style>
-    :root{
-      --bg:#f6eee6; /* קרם */
-      --panel:#f1e6dc; /* קרם בהיר יותר */
-      --ink:#1d1d1b; /* טקסט */
-      --muted:#8a7b72; /* טקסט משני */
-      --gold:#d6b48f; /* זהב עדין */
-      --ring:#d9c3a9; /* קו מסגרת */
-      --cta:#caa57f; /* כפתור */
-      --shadow: 0 6px 18px rgba(0,0,0,.06);
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font:400 18px/1.5 "Georgia", "Times New Roman", serif;
-      color:var(--ink); background:var(--bg);
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    .wrap{
-      max-width:1120px; margin:42px auto; padding:0 20px;
-      display:grid; grid-template-columns: 520px 1fr; gap:36px;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kalb Hotel — Where Dogs Stay Like Royals</title>
+<meta name="description" content="Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience." />
 
-    /* לוגו אזור שמאלי */
-    .brand{
-      display:flex; align-items:center; gap:18px; margin-bottom:18px;
-    }
-    .brand .emblem{
-      width:64px; height:64px; border-radius:50%;
-      border:2px solid var(--ring); display:grid; place-items:center;
-      background:linear-gradient(180deg, #f9f1e9, #f2e6dc);
-      box-shadow:0 1px 0 #fff inset;
-    }
-    /* אייקון כלב קווי דק – וקטורי פשוט */
-    .brand .emblem svg{width:40px; height:40px; fill:none; stroke:#bfa27f; stroke-width:1.6}
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 
-    h1.brandname{
-      font:700 34px/1.15 "Georgia", serif; margin:0;
-      letter-spacing:.2px;
-    }
-    .subline{
-      margin-top:4px; color:var(--muted); font:500 12px/1.2 system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-      letter-spacing:.16em;
-    }
+<style>
+  :root{
+    --bg:#f6ebe3; /* רקע ורדרד בהיר (לפי התמונה) */
+    --card:#f1e3d7; /* מסגרות בהירות */
+    --ink:#1e1c1a; /* טקסט כהה */
+    --sub:#6f5f54; /* טקסט משני */
+    --cream:#f3e6da;
+    --ring:#e7d9c9;
+    --brand:#c7a784; /* זהוב עדין */
+    --shadow:0 1px 0 rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.06);
+  }
 
-    /* בועות שפה */
-    .lang{
-      position:absolute; right:24px; top:18px; display:flex; gap:8px;
-      font:600 12px/1 system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-    }
-    .lang span{
-      padding:8px 10px; border-radius:999px; background:#eee4da; color:#6f5f54; border:1px solid #e5d7c8;
-    }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font:400 17px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  }
 
-    /* אזור תוכן שמאלי */
-    .left{
-      position:relative;
-    }
-    .hero h2{
-      font:700 40px/1.15 "Georgia", serif; margin:10px 0 12px;
-      letter-spacing:.2px;
-    }
-    .hero p{color:#534942; margin:0 0 18px}
-    .cta-row{display:flex; gap:12px; margin:18px 0 26px}
-    .btn{
-      padding:12px 18px; border-radius:999px; border:1.5px solid var(--ring); background:var(--panel);
-      box-shadow:var(--shadow); font:600 15px/1.2 system-ui, -apple-system, Segoe UI, Arial, sans-serif; color:#453c35;
-      text-decoration:none; display:inline-flex; align-items:center; justify-content:center;
-    }
-    .btn.primary{background:var(--cta); color:#fff; border-color:#c6a07b}
+  .page{
+    max-width:1100px;
+    padding:28px 20px 40px;
+    margin:0 auto;
+  }
 
-    .cards{display:grid; gap:12px}
-    .card{
-      background:var(--panel); border:1px solid var(--ring); border-radius:16px; padding:14px 16px;
-      box-shadow:var(--shadow)
-    }
-    .card h3{margin:0 0 6px; font:700 18px/1.2 "Georgia", serif}
-    .muted{color:var(--muted); font-size:15px}
+  /* כרטיס ענק עם מסגרת עבה, כמו בצילום */
+  .panel{
+    background:#fff9f2;
+    border:2px solid #e8d6c4;
+    border-radius:20px;
+    padding:26px;
+    box-shadow: var(--shadow);
+  }
 
-    /* טור התמונות הימני */
-    .right{display:grid; gap:18px; align-content:start}
-    .dog{
-      width:100%; aspect-ratio: 4 / 3; border-radius:18px; overflow:hidden;
-      background:#ddd; border:1px solid var(--ring); box-shadow:var(--shadow)
-    }
-    .dog img{
-      width:100%; height:100%; object-fit:cover; display:block;
-      image-rendering:auto;
-    }
-    /* מיקום לא לחתוך ראש */
-    .dog--maltese img{object-position:50% 20%;}
-    .dog--pomeranian img{object-position:50% 60%;}
+  /* שורת מותג עם לוגו, שם ושפות */
+  .brand{ display:flex; align-items:center; gap:14px; }
+  .emblem{
+    width:44px; height:44px; border:2px solid var(--brand);
+    border-radius:50%; display:grid; place-items:center; color:var(--brand);
+    background:#fff7ef;
+  }
+  .emblem svg{ width:22px; height:22px; fill:currentColor }
+  .brandname{ font:700 28px/1 "Georgia", "Times New Roman", serif; margin:0; letter-spacing:.2px }
+  .subline{ color:var(--sub); font-weight:600; font-size:12px; letter-spacing:.08em; }
 
-    /* תחתית */
-    .domain{
-      margin-top:8px; color:#6b5e55; font:600 18px/1.2 "Georgia", serif;
-    }
-    .domain small{display:block; font:400 14px/1.4 "Georgia", serif; color:#7b6e64}
-    .disclaimer{
-      margin-top:18px; font:13px/1.35 system-ui, -apple-system, Segoe UI, Arial, sans-serif; color:#7b6e64;
-    }
+  .lang{ margin-left:auto; display:flex; gap:8px; }
+  .lang button{
+    padding:7px 10px; border-radius:999px; border:1px solid var(--ring);
+    background:#eee4da; color:#6f5f54; font:600 12px/1 ui-sans-serif, system-ui;
+    cursor:default;
+  }
 
-    /* מסגרת כללית כמו בפוסטר */
-    .page-frame{
-      max-width:1120px; margin:22px auto 0; padding:18px; border:2px solid var(--ring);
-      border-radius:14px;
-    }
+  /* פריסת שתי עמודות */
+  .grid{ display:grid; grid-template-columns: 1.06fr .94fr; gap:26px; margin-top:18px; }
+  @media (max-width:960px){ .grid{ grid-template-columns:1fr; } }
 
-    @media (max-width: 980px){
-      .wrap{grid-template-columns:1fr; gap:22px}
-      .lang{position:static; justify-content:flex-end; margin-bottom:8px}
-    }
-  </style>
+  /* צד שמאל – כותרות, טקסטים וכפתורים */
+  h2.title{
+    font:700 44px/1.12 "Georgia","Times New Roman",serif;
+    margin:10px 0 10px;
+  }
+  .lead{ color:#3c3530; max-width:46ch; }
+
+  .cta{ display:flex; gap:12px; margin:18px 0 10px; }
+  .cta a{
+    display:inline-block; padding:12px 18px; border-radius:999px;
+    border:1px solid var(--ring); text-decoration:none; font-weight:700;
+  }
+  .cta .primary{ background:#d9b78f; color:#2b241f; box-shadow:var(--shadow) }
+  .cta .ghost{ background:#fff7ef; color:#2b241f }
+
+  /* אריחי המאפיינים */
+  .features{ display:grid; gap:12px; max-width:520px; }
+  .feature{
+    background:var(--card); border:1px solid var(--ring); border-radius:14px;
+    padding:14px 16px; box-shadow: var(--shadow);
+  }
+  .feature h3{ margin:0 0 4px; font:700 16px/1.3 ui-sans-serif, system-ui }
+  .feature p{ margin:0; color:#5a514a; font-size:14px }
+
+  .domain{ margin-top:6px; color:#3a342f; font-weight:600; font-size:13px }
+  .domain a{ color:#3a342f; }
+
+  /* צד ימין – שתי תמונות בתוך קלפים מעוגלים */
+  .stack{ display:grid; gap:18px; }
+  .dog{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    border-radius:18px; overflow:hidden;
+    background:#ddd; border:1px solid var(--ring); box-shadow:var(--shadow);
+  }
+  .dog img{ width:100%; height:100%; object-fit:cover; display:block; image-rendering:auto; }
+  /* מיקומים כדי לא לחתוך ראשים */
+  .dog--maltese img{ object-position:50% 32%; } /* מרים מעט */
+  .dog--pomeranian img{ object-position:50% 38%; } /* מרים יותר */
+
+  /* פוטר תחתון כמו בתמונה */
+  .fineprint{
+    margin-top:18px; color:#5e554e; font-size:13px;
+  }
+</style>
 </head>
 <body>
-  <div class="page-frame">
-    <div class="wrap">
-      <!-- עמודות -->
-      <div class="left">
-        <div class="lang"><span>EN</span><span>HE</span><span>AR</span></div>
+  <div class="page">
+    <div class="panel">
+      <!-- שורת לוגו + שם + שפות -->
+      <div class="brand">
+        <div class="emblem" aria-hidden="true">
+          <!-- אייקון כלבי דמוי-קו -->
+          <svg viewBox="0 0 24 24"><path d="M6.6 12.3c-1.3-1.8-.9-4.2 1-5.5 1.8-1.3 4.4-.8 5.7 1.1.5-.7 1.4-1.2 2.3-1.2 1.7 0 3 1.3 3 3 0 .6-.2 1.1-.5 1.6 1 .7 1.7 1.9 1.7 3.2 0 2.2-1.8 4-4 4H10c-2.6 0-3.9-1.7-4.2-3.2-.2-.9.1-1.8.8-2.4z"/></svg>
+        </div>
+        <div>
+          <h1 class="brandname">Kalb Hotel</h1>
+          <div class="subline">BOUTIQUE · CAGE-FREE · 24/7 CARE</div>
+        </div>
+        <div class="lang"><button>EN</button><button>HE</button><button>AR</button></div>
+      </div>
 
-        <div class="brand">
-          <div class="emblem" aria-hidden="true">
-            <!-- כלב קווי -->
-            <svg viewBox="0 0 24 24"><path d="M6.5 12.2c-1.3-1.8-.9-4.2.9-5.5 1.9-1.3 4.5-.8 5.8 1.1.5-.7 1.4-1.2 2.3-1.2 1.7 0 3 1.3 3 3 0 .6-.2 1.1-.5 1.6 1 .7 1.7 1.9 1.7 3.2 0 2.2-1.8 4-4 4H10c-2.6 0-3.9-1.7-4.2-3.2-.2-.9.1-1.8.7-2.4z"/></svg>
+      <!-- שתי עמודות -->
+      <div class="grid">
+        <!-- שמאל -->
+        <div>
+          <h2 class="title">Where dogs<br />stay like royals.</h2>
+          <p class="lead">Private suites, daily pampering, and round-the-clock supervision—so your best friend enjoys a five-star experience.</p>
+
+          <div class="cta">
+            <a class="primary" href="https://wa.me/"><b>Call / WhatsApp</b></a>
+            <a class="ghost" href="#"><b>Contact Us</b></a>
           </div>
-          <div>
-            <h1 class="brandname">Kalb Hotel</h1>
-            <div class="subline">BOUTIQUE • CAGE-FREE • 24/7 CARE</div>
+
+          <div class="features">
+            <div class="feature">
+              <h3>Luxury Suites</h3>
+              <p>Elegant, climate-controlled rooms with plush furnishings.</p>
+            </div>
+            <div class="feature">
+              <h3>Daily Activities</h3>
+              <p>Spa treatments, play sessions, and enrichment.</p>
+            </div>
+            <div class="feature">
+              <h3>24/7 Supervision</h3>
+              <p>Attentive staff ensuring safety and comfort.</p>
+            </div>
           </div>
+
+          <div class="domain">Domain For Sale · <a href="https://kalbhotel.com">kalbhotel.com</a></div>
         </div>
 
-        <section class="hero">
-          <h2>Where dogs<br>stay like royals.</h2>
-          <p>Private suites, daily pampering, and round-the-clock supervision—so your best friend enjoys a five-star experience.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="tel:+000">Call / WhatsApp</a>
-            <a class="btn" href="#contact">Contact Us</a>
-          </div>
-          <div class="cards">
-            <div class="card">
-              <h3>Luxury Suites</h3>
-              <div class="muted">Elegant, climate-controlled rooms with plush furnishings.</div>
-            </div>
-            <div class="card">
-              <h3>Daily Activities</h3>
-              <div class="muted">Spa treatments, play sessions, and enrichment.</div>
-            </div>
-            <div class="card">
-              <h3>24/7 Supervision</h3>
-              <div class="muted">Attentive staff ensuring safety and comfort.</div>
-            </div>
-          </div>
-        </section>
-
-        <div class="disclaimer" style="margin-top:18px;">
-          <span style="font-weight:600; font-family: 'Georgia', serif;">Premium Domain Available ·</span>
-          <a href="https://kalbhotel.com" style="color:#6b5e55; text-decoration:none;">kalbhotel.com</a>
+        <!-- ימין: שתי תמונות -->
+        <div class="stack">
+          <figure class="dog dog--maltese">
+            <img src="assets/dogs/maltese_suite.jpg" alt="Small white dog with a satin bow on a plush ottoman">
+          </figure>
+          <figure class="dog dog--pomeranian">
+            <img src="assets/dogs/pomeranian_glam.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room">
+          </figure>
         </div>
       </div>
 
-      <div class="right">
-        <figure class="dog dog--maltese">
-          <img src="assets/dogs/maltese_suite.jpg" alt="Small white dog with a satin bow on a plush ottoman">
-        </figure>
-        <figure class="dog dog--pomeranian">
-          <img src="assets/dogs/pomeranian_glam.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room">
-        </figure>
+      <!-- שורת תחתית קטנה -->
+      <div class="fineprint">
+        Designed to meet global hospitality standards. Kalb Hotel is sought-after by discerning dog owners and partners.
       </div>
     </div>
   </div>
+
+  <!-- !force rebuild -->
 </body>
 </html>
+
