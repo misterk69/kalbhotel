@@ -3,110 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kalb Hotel — Boutique • Cage-Free • 24/7 Care</title>
-  <meta name="description" content="Private suites, daily pampering, and round-the-clock supervision—so your best friend enjoys a five-star experience." />
+  <title>Kalb Hotel — Luxury Dog Boarding & Care</title>
+  <meta name="description" content="Kalb Hotel: boutique, cage-free dog hotel. Private suites, daily pampering, and 24/7 supervision." />
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
   <style>
     :root{
-      --bg:#f6eee8;
-      --ink:#1f1b18;
-      --muted:#947f6a;
-      --card:#f1e5dd;
-      --pill:#e5cfb8;
-      --brand:#cfa97e;
-      --ring:#d9c4ae;
+      --bg:#f6ede6;           /* רקע בז' עדין */
+      --paper:#fff6ef;
+      --ink:#2a2a2a;
+      --muted:#8a6f57;
+      --brand:#cfb08c;        /* זהב רך */
+      --brand-ink:#3b2b1e;
+      --chip:#edd7c2;
+      --shadow:0 10px 30px rgba(0,0,0,.06);
+      --radius:22px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0}
+    html,body{height:100%}
     body{
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      color:var(--ink);
-      background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.45;
+      margin:0; font:16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      color:var(--ink); background:var(--bg);
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:28px 22px}
-    header{display:flex;align-items:center;gap:14px}
-    .mark{
-      width:42px;height:42px;border-radius:50%;
-      border:3px solid var(--ring);display:grid;place-items:center;
-      font-weight:700;color:var(--muted)
+
+    /* מסגרת דקה סביב כל העמוד כמו במוקאפ */
+    .frame{
+      max-width:1120px; margin:28px auto; padding:28px;
+      background:#fff; border:3px solid #ead9c8; border-radius:28px;
+      box-shadow:var(--shadow);
     }
-    .brand{font-size:44px;font-weight:800;letter-spacing:.3px}
-    .sub{letter-spacing:.18em;color:var(--muted);font-size:12px;margin-top:4px}
-    .lang{margin-left:auto;display:flex;gap:8px}
+
+    /* שורת הראש */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:8px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px;
+      font-weight:700; font-size:42px; letter-spacing:.5px; color:#1c1713;
+    }
+    .brand-badge{
+      width:48px; height:48px; border-radius:50%;
+      border:2px solid var(--brand); display:grid; place-items:center;
+      font-weight:700; color:var(--brand-ink); background:#fff8f1;
+    }
+    .meta{color:var(--muted); font-size:13px; letter-spacing:.12em; text-transform:uppercase}
+    .lang{
+      display:flex; gap:8px;
+    }
     .lang a{
-      font-size:12px;padding:4px 10px;border-radius:999px;
-      background:var(--pill);color:#3b2f23;text-decoration:none
+      text-decoration:none; color:#76614f; background:#efe0d1; padding:6px 10px;
+      border-radius:999px; font-size:12px
     }
 
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;margin-top:28px}
-    @media (max-width:880px){ .hero{grid-template-columns:1fr} .lang{display:none}}
-    h1{font-size:40px;line-height:1.1;margin:0 0 14px}
-    p.lead{max-width:560px;margin:0 0 18px;color:#4a4139}
-
-    .cta{display:flex;gap:14px;margin:22px 0 10px}
-    .btn{padding:12px 18px;border-radius:24px;font-weight:700;border:2px solid #d8c2ae;background:#fff}
-    .btn.alt{background:var(--brand);border-color:var(--brand);color:#fff}
-
-    .cards{display:grid;gap:12px;margin-top:14px;max-width:620px}
-    .card{background:var(--card);padding:16px 18px;border-radius:14px;color:#574b41}
-
-    /* תמונות הכלבים – שתי תמונות בעמודה הימנית */
-    .gallery{display:grid;gap:14px}
-    .dog{
-      width:100%; max-width:460px; aspect-ratio: 4/3;
-      object-fit:cover; border-radius:18px; display:block;
-      box-shadow:0 1px 0 rgba(0,0,0,.04)
+    /* גריד שתי עמודות: טקסט משמאל, תמונות מימין */
+    .hero{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:start; margin-top:10px;
     }
-    @media (max-width:880px){ .dog{max-width:100%} }
 
-    footer{margin-top:22px;color:#6a5b4f;font-size:13px}
+    h1{
+      font-size:44px; line-height:1.15; margin:18px 0 10px;
+      font-weight:800; color:#1d1a17;
+    }
+    p.lead{max-width:46ch; color:#5b4a3c}
+
+    .cta-row{display:flex; gap:14px; margin:22px 0 24px}
+    .btn{
+      padding:12px 18px; border-radius:999px; border:2px solid #e2cbb7; background:#fff;
+      color:#31261c; font-weight:600; text-decoration:none; box-shadow:var(--shadow)
+    }
+    .btn.brand{background:var(--brand); color:#2a1f14; border-color:transparent}
+
+    .card{
+      background:#fff; border:2px solid #ead9c8; border-radius:18px; padding:16px 18px;
+      width:88%; box-shadow:var(--shadow); margin:14px 0;
+    }
+    .card h3{margin:0 0 6px; font-size:18px}
+    .card p{margin:0; color:#5d4b3e}
+
+    /* עמודת התמונות */
+    .shots{display:flex; flex-direction:column; gap:22px}
+    .shot{
+      overflow:hidden; border-radius:18px; background:var(--paper); border:2px solid #e7d3c1;
+      box-shadow:var(--shadow)
+    }
+    .shot img{display:block; width:100%; height:auto}
+
+    .footnote{
+      margin-top:22px; color:#6b5a4a; font-size:12.5px
+    }
+
+    /* מובייל */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; gap:18px}
+      .card{width:100%}
+      .brand{font-size:36px}
+    }
   </style>
+  <script>
+    // סוויצ'ר שפה פשוט: רק משנה כיוון/טקסט לפי EN/HE/AR (תוכן מלא נוסיף כשנחליט)
+    function setLang(code){
+      document.documentElement.lang = code;
+      document.documentElement.dir = (code === 'ar' || code === 'he') ? 'rtl' : 'ltr';
+    }
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="mark">K</div>
+  <div class="frame">
+    <div class="topbar">
       <div>
-        <div class="brand">Kalb Hotel</div>
-        <div class="sub">BOUTIQUE • CAGE-FREE • 24/7 CARE</div>
+        <div class="brand">
+          <div class="brand-badge">K</div>
+          Kalb Hotel
+        </div>
+        <div class="meta">BOUTIQUE · CAGE-FREE · 24/7 CARE</div>
       </div>
-      <nav class="lang">
-        <a href="#">EN</a><a href="#">HE</a><a href="#">AR</a>
+      <nav class="lang" aria-label="Language">
+        <a href="#" onclick="setLang('en')">EN</a>
+        <a href="#" onclick="setLang('he')">HE</a>
+        <a href="#" onclick="setLang('ar')">AR</a>
       </nav>
-    </header>
+    </div>
 
     <section class="hero">
-      <!-- טקסט משמאל -->
+      <!-- טקסט וכפתורים -->
       <div>
-        <h1>Where dogs<br>stay like royals.</h1>
-        <p class="lead">Private suites, daily pampering, and round-the-clock
-          supervision—so your best friend enjoys a five-star experience.</p>
+        <h1>Where dogs<br/>stay like royals.</h1>
+        <p class="lead">
+          Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience.
+        </p>
 
-        <div class="cta">
-          <a class="btn alt" href="https://wa.me/">Call / WhatsApp</a>
+        <div class="cta-row">
+          <a class="btn brand" href="https://wa.me/9720000000000" target="_blank" rel="noopener">Call / WhatsApp</a>
           <a class="btn" href="mailto:info@kalbhotel.com">Contact Us</a>
         </div>
 
-        <div class="cards">
-          <div class="card"><strong>Luxury Suites</strong><br>
-            Elegant, climate-controlled rooms with plush furnishings.</div>
-          <div class="card"><strong>Daily Activities</strong><br>
-            Spa treatments, play sessions, and enrichment.</div>
-          <div class="card"><strong>24/7 Supervision</strong><br>
-            Attentive staff ensuring safety and comfort.</div>
+        <div class="card">
+          <h3>Luxury Suites</h3>
+          <p>Elegant, climate-controlled rooms with plush furnishings.</p>
         </div>
 
-        <footer>Premium Domain Available · kalbhotel.com</footer>
+        <div class="card">
+          <h3>Daily Activities</h3>
+          <p>Spa treatments, play sessions, and enrichment.</p>
+        </div>
+
+        <div class="card">
+          <h3>24/7 Supervision</h3>
+          <p>Attentive staff ensuring safety and comfort.</p>
+        </div>
+
+        <div class="footnote">Premium Domain Available · kalbhotel.com</div>
       </div>
 
-      <!-- גלריית שתי התמונות מימין -->
-      <div class="gallery">
-        <img class="dog" src="assets/dogs/maltese_suite.jpg" alt="Small white dog with a satin bow on a plush ottoman">
-        <img class="dog" src="assets/dogs/pomeranian_glam.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room">
+      <!-- שתי התמונות הימניות (עם פינות מעוגלות) -->
+      <div class="shots">
+        <figure class="shot">
+          <img src="/assets/dogs/ribbon_dog.jpg" alt="Small white dog with a satin bow on a plush ottoman">
+        </figure>
+        <figure class="shot">
+          <img src="/assets/dogs/cream_pom.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room">
+        </figure>
       </div>
     </section>
   </div>
+  <!-- !force rebuild -->
 </body>
 </html>
