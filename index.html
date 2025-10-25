@@ -1,170 +1,159 @@
-<!doctype html>
+
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kalb Hotel — Luxury Dog Boarding & Care</title>
-  <meta name="description" content="Kalb Hotel: boutique, cage-free dog hotel. Private suites, daily pampering, and 24/7 supervision." />
+  <title>Kalb Hotel — Boutique, Cage-Free, 24/7 Care</title>
+  <meta name="description" content="Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience." />
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
   <style>
     :root{
-      --bg:#f6ede6;           /* רקע בז' עדין */
-      --paper:#fff6ef;
-      --ink:#2a2a2a;
-      --muted:#8a6f57;
-      --brand:#cfb08c;        /* זהב רך */
-      --brand-ink:#3b2b1e;
-      --chip:#edd7c2;
-      --shadow:0 10px 30px rgba(0,0,0,.06);
-      --radius:22px;
+      --bg:#f8efe7; --ink:#1b1b23; --inkSoft:#5a5a67;
+      --brand:#e5c4a1; --brandSoft:#f1d8bd; --line:#e8d9c9;
+      --pill:#e5cdb5;
+      --radius:18px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font:16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-      color:var(--ink); background:var(--bg);
-    }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-serif, Georgia, "Times New Roman", serif}
+    .wrap{max-width:1100px;margin:40px auto;padding:0 20px}
+    header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+    .mark{width:40px;height:40px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-weight:700;color:#a7874e;background:#fff}
+    .brand{font-weight:800;font-size:34px;letter-spacing:.5px}
+    .sub{font-size:12px;color:var(--inkSoft);letter-spacing:.15em}
+    .lang{margin-left:auto;display:flex;gap:8px}
+    .lang button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 9px;font-size:12px;cursor:pointer}
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr;gap:18px}}
 
-    /* מסגרת דקה סביב כל העמוד כמו במוקאפ */
-    .frame{
-      max-width:1120px; margin:28px auto; padding:28px;
-      background:#fff; border:3px solid #ead9c8; border-radius:28px;
-      box-shadow:var(--shadow);
-    }
+    h1{font-size:42px;line-height:1.15;margin:0 0 14px}
+    p.lead{margin:0 0 18px;color:var(--inkSoft);font-size:15px}
+    .ctaRow{display:flex;gap:12px;margin:18px 0 26px}
+    .btn{border-radius:999px;padding:12px 20px;border:2px solid var(--brand);background:var(--pill);font-weight:700}
+    .btn.out{background:#fff;border-color:var(--line)}
 
-    /* שורת הראש */
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:8px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:14px;
-      font-weight:700; font-size:42px; letter-spacing:.5px; color:#1c1713;
-    }
-    .brand-badge{
-      width:48px; height:48px; border-radius:50%;
-      border:2px solid var(--brand); display:grid; place-items:center;
-      font-weight:700; color:var(--brand-ink); background:#fff8f1;
-    }
-    .meta{color:var(--muted); font-size:13px; letter-spacing:.12em; text-transform:uppercase}
-    .lang{
-      display:flex; gap:8px;
-    }
-    .lang a{
-      text-decoration:none; color:#76614f; background:#efe0d1; padding:6px 10px;
-      border-radius:999px; font-size:12px
-    }
+    .card{border:1px solid var(--line);background:#fff;border-radius:var(--radius);padding:16px 18px;margin:12px 0}
+    .label{font-weight:700}
 
-    /* גריד שתי עמודות: טקסט משמאל, תמונות מימין */
-    .hero{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:start; margin-top:10px;
-    }
+    /* תמונות — יחס וגודל רספונסיבי */
+    .pics{display:flex;flex-direction:column;gap:18px}
+    .shot{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff}
+    .shot img{display:block;width:100%;height:auto;aspect-ratio:16/11;object-fit:cover}
 
-    h1{
-      font-size:44px; line-height:1.15; margin:18px 0 10px;
-      font-weight:800; color:#1d1a17;
-    }
-    p.lead{max-width:46ch; color:#5b4a3c}
-
-    .cta-row{display:flex; gap:14px; margin:22px 0 24px}
-    .btn{
-      padding:12px 18px; border-radius:999px; border:2px solid #e2cbb7; background:#fff;
-      color:#31261c; font-weight:600; text-decoration:none; box-shadow:var(--shadow)
-    }
-    .btn.brand{background:var(--brand); color:#2a1f14; border-color:transparent}
-
-    .card{
-      background:#fff; border:2px solid #ead9c8; border-radius:18px; padding:16px 18px;
-      width:88%; box-shadow:var(--shadow); margin:14px 0;
-    }
-    .card h3{margin:0 0 6px; font-size:18px}
-    .card p{margin:0; color:#5d4b3e}
-
-    /* עמודת התמונות */
-    .shots{display:flex; flex-direction:column; gap:22px}
-    .shot{
-      overflow:hidden; border-radius:18px; background:var(--paper); border:2px solid #e7d3c1;
-      box-shadow:var(--shadow)
-    }
-    .shot img{display:block; width:100%; height:auto}
-
-    .footnote{
-      margin-top:22px; color:#6b5a4a; font-size:12.5px
-    }
-
-    /* מובייל */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; gap:18px}
-      .card{width:100%}
-      .brand{font-size:36px}
-    }
+    footer{margin-top:8px;color:var(--inkSoft);font-size:11px}
   </style>
-  <script>
-    // סוויצ'ר שפה פשוט: רק משנה כיוון/טקסט לפי EN/HE/AR (תוכן מלא נוסיף כשנחליט)
-    function setLang(code){
-      document.documentElement.lang = code;
-      document.documentElement.dir = (code === 'ar' || code === 'he') ? 'rtl' : 'ltr';
-    }
-  </script>
 </head>
 <body>
-  <div class="frame">
-    <div class="topbar">
+  <div class="wrap">
+    <header>
+      <div class="mark">K</div>
       <div>
-        <div class="brand">
-          <div class="brand-badge">K</div>
-          Kalb Hotel
-        </div>
-        <div class="meta">BOUTIQUE · CAGE-FREE · 24/7 CARE</div>
+        <div class="brand">Kalb Hotel</div>
+        <div class="sub">BOUTIQUE • CAGE-FREE • 24/7 CARE</div>
       </div>
-      <nav class="lang" aria-label="Language">
-        <a href="#" onclick="setLang('en')">EN</a>
-        <a href="#" onclick="setLang('he')">HE</a>
-        <a href="#" onclick="setLang('ar')">AR</a>
-      </nav>
-    </div>
+      <div class="lang">
+        <button data-lang="en">EN</button>
+        <button data-lang="he">HE</button>
+        <button data-lang="ar">AR</button>
+      </div>
+    </header>
 
-    <section class="hero">
-      <!-- טקסט וכפתורים -->
-      <div>
-        <h1>Where dogs<br/>stay like royals.</h1>
-        <p class="lead">
+    <main class="grid" id="content">
+      <!-- עמודת תוכן -->
+      <section>
+        <h1 data-i18n="h1">Where dogs<br>stay like royals.</h1>
+        <p class="lead" data-i18n="lead">
           Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience.
         </p>
-
-        <div class="cta-row">
-          <a class="btn brand" href="https://wa.me/9720000000000" target="_blank" rel="noopener">Call / WhatsApp</a>
-          <a class="btn" href="mailto:info@kalbhotel.com">Contact Us</a>
+        <div class="ctaRow">
+          <a class="btn" href="https://wa.me/972000000000">Call / WhatsApp</a>
+          <a class="btn out" href="mailto:info@kalbhotel.com">Contact Us</a>
         </div>
 
         <div class="card">
-          <h3>Luxury Suites</h3>
-          <p>Elegant, climate-controlled rooms with plush furnishings.</p>
+          <div class="label" data-i18n="s1t">Luxury Suites</div>
+          <div data-i18n="s1d">Elegant, climate-controlled rooms with plush furnishings.</div>
         </div>
-
         <div class="card">
-          <h3>Daily Activities</h3>
-          <p>Spa treatments, play sessions, and enrichment.</p>
+          <div class="label" data-i18n="s2t">Daily Activities</div>
+          <div data-i18n="s2d">Spa treatments, play sessions, and enrichment.</div>
         </div>
-
         <div class="card">
-          <h3>24/7 Supervision</h3>
-          <p>Attentive staff ensuring safety and comfort.</p>
+          <div class="label" data-i18n="s3t">24/7 Supervision</div>
+          <div data-i18n="s3d">Attentive staff ensuring safety and comfort.</div>
         </div>
 
-        <div class="footnote">Premium Domain Available · kalbhotel.com</div>
-      </div>
+        <footer>
+          <span data-i18n="foot">Premium Domain Available · kalbhotel.com</span>
+        </footer>
+      </section>
 
-      <!-- שתי התמונות הימניות (עם פינות מעוגלות) -->
-      <div class="shots">
+      <!-- עמודת תמונות -->
+      <aside class="pics">
         <figure class="shot">
-          <img src="/assets/dogs/ribbon_dog.jpg" alt="Small white dog with a satin bow on a plush ottoman">
+          <img src="assets/dogs/maltese_suite.jpg?v=3" alt="Small white dog with a satin bow on a plush ottoman">
         </figure>
         <figure class="shot">
-          <img src="/assets/dogs/cream_pom.jpg" alt="Fluffy pomeranian on a gold armchair in a pastel room">
+          <img src="assets/dogs/pomeranian_glam.jpg?v=3" alt="Fluffy pomeranian on a gold armchair in a pastel room">
         </figure>
-      </div>
-    </section>
+      </aside>
+    </main>
   </div>
-  <!-- !force rebuild -->
+
+  <script>
+    // טקסטים בשלוש שפות
+    const t = {
+      en:{h1:"Where dogs<br>stay like royals.",
+          lead:"Private suites, daily pampering, and round-the-clock supervision — so your best friend enjoys a five-star experience.",
+          s1t:"Luxury Suites", s1d:"Elegant, climate-controlled rooms with plush furnishings.",
+          s2t:"Daily Activities", s2d:"Spa treatments, play sessions, and enrichment.",
+          s3t:"24/7 Supervision", s3d:"Attentive staff ensuring safety and comfort.",
+          foot:"Premium Domain Available · kalbhotel.com"},
+      he:{h1:"מקום שהכלב<br>מרגיש בו מלך.",
+          lead:"סוויטות פרטיות, טיפוחים יומיומיים והשגחה סביב השעון — כדי שחברכם הטוב יהנה מחוויה ברמה של חמישה כוכבים.",
+          s1t:"סוויטות יוקרתיות", s1d:"חדרים אלגנטיים וממוזגים עם ריהוט קטיפתי.",
+          s2t:"פעילויות יומיות", s2d:"טיפולי ספא, משחקים והעשרה.",
+          s3t:"השגחה 24/7", s3d:"צוות קשוב המבטיח בטיחות ונוחות.",
+          foot:"Premium Domain Available · kalbhotel.com"},
+      ar:{h1:"مكان يشعر فيه كلبك<br>كأنّه ملك.",
+          lead:"أجنحة خاصة، تدليل يومي، وإشراف على مدار الساعة — لتجربة خمس نجوم لصديقك الوفي.",
+          s1t:"أجنحة فاخرة", s1d:"غرف أنيقة مُكيّفة بأثاث وثير.",
+          s2t:"نشاطات يومية", s2d:"علاجات سبا، جلسات لعب، وإثراء.",
+          s3t:"إشراف 24/7", s3d:"طاقم يقظ يضمن الأمان والراحة.",
+          foot:"Premium Domain Available · kalbhotel.com"}
+    };
+
+    const els = {
+      h1:document.querySelector('[data-i18n="h1"]'),
+      lead:document.querySelector('[data-i18n="lead"]'),
+      s1t:document.querySelector('[data-i18n="s1t"]'),
+      s1d:document.querySelector('[data-i18n="s1d"]'),
+      s2t:document.querySelector('[data-i18n="s2t"]'),
+      s2d:document.querySelector('[data-i18n="s2d"]'),
+      s3t:document.querySelector('[data-i18n="s3t"]'),
+      s3d:document.querySelector('[data-i18n="s3d"]'),
+      foot:document.querySelector('[data-i18n="foot"]')
+    };
+
+    function applyLang(lang){
+      const L = t[lang] || t.en;
+      els.h1.innerHTML=L.h1;
+      els.lead.textContent=L.lead;
+      els.s1t.textContent=L.s1t; els.s1d.textContent=L.s1d;
+      els.s2t.textContent=L.s2t; els.s2d.textContent=L.s2d;
+      els.s3t.textContent=L.s3t; els.s3d.textContent=L.s3d;
+      els.foot.textContent=L.foot;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang==='he' || lang==='ar') ? 'rtl' : 'ltr';
+    }
+
+    // שפה אוטומטית + מתגים
+    const pref = (navigator.language||'en').slice(0,2);
+    applyLang(['he','ar','en'].includes(pref)?pref:'en');
+    document.querySelectorAll('.lang button').forEach(b=>{
+      b.addEventListener('click',()=>applyLang(b.dataset.lang));
+    });
+  </script>
+
+  <!-- gp: rebuild 4 -->
 </body>
 </html>
